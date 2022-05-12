@@ -1,0 +1,33 @@
+<!-- <app-header [dataTest]="userArr"></app-header> -->
+
+<!-- <div *ngFor="let user of userArr">
+  <h2>{{ user.Name }}</h2>
+  <h4>{{ user.Version }}</h4>
+  <img src="{{ user.IconUrl }}" alt="" />
+</div> -->
+<section class="chart-section">
+  <div
+    *ngFor="let user of dataTest"
+    class="card-body shadow rounded mt-5 mb-2 bg-blue"
+  >
+    <div class="row">
+      <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+        <img
+          src="{{ user.IconUrl }}"
+          alt="Avatar"
+          class="avatar"
+          width="70px"
+          height="70px"
+        />
+      </div>
+      <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10 text-right">
+        <span>
+          <h5 class="col-9 rowalign">{{ user.Name }}</h5>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <div *ngFor="let item of listArr">
+  <p>{{ item }}</p>
+</div> -->

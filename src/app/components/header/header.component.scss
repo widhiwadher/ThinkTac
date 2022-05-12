@@ -1,0 +1,50 @@
+@import '../../../variable.scss';
+
+.bg-yellow {
+  background-color: rgb(246, 255, 161);
+}
+
+.multicolor-text {
+  text-align: center;
+  font-size: 40px;
+  background: linear-gradient(
+    to right,
+    red,
+    // violet,
+      // indigo,
+      //   orange,
+      green,
+    rgb(60, 60, 189)
+  );
+  background-clip: text;
+  color: transparent;
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+.centerchatbox {
+  flex-grow: 2;
+  border: none;
+  border-top-left-radius: 80px 80px;
+  border-bottom-left-radius: 80px 80px;
+  border-right: none;
+
+  @include mobile {
+    padding: 3px 10px;
+  }
+}
+
+.searchbtn {
+  border-top-right-radius: 80px 80px;
+  border-bottom-right-radius: 80px 80px;
+  border-left: none;
+  padding: 5px 20px;
+  background-color: #fb870c;
+  color: white;
+
+  @include mobile {
+    padding: 3px 10px;
+  }
+}

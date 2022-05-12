@@ -1,0 +1,29 @@
+@import '../../../variable.scss';
+
+.home-bg {
+  background-color: #e4dede;
+  color: #8a1616;
+}
+
+.card-body {
+  background-color: rgb(206, 174, 236);
+  width: 30rem;
+  border-left: 3px solid rgb(170, 50, 220, 0.6);
+  border-radius: 5px;
+  @include mobile {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+.chart-section {
+  .text-right {
+    text-align: -webkt-right;
+  }
+  .rowalign {
+    display: inline;
+  }
+  .time-inline {
+    color: #ffffff;
+    text-align: right;
+  }
+}
