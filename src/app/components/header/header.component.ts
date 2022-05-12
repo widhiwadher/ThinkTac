@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from '../../service/api-service.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,28 +6,25 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  message: string = '';
-  subscription!: Subscription;
+  @Output() btnClick = new EventEmitter();
 
-  dataList: any = '';
-  filterName: any = '';
   searchStr: any = '';
-  userArr: any = '';
-  constructor(private apiService: ApiServiceService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.apiService.callingService().subscribe((res) => {
-      this.userArr = res;
-      console.log(this.userArr);
-    });
+
   }
 
-  fnSearch(event: any) {
-    console.log(this.searchStr)
-    this.filterName = event.target.value;
-    this.userArr = this.userArr.filter((item: any) => {
-      return item.Name.includes(this.searchStr);
-    });
-    console.log(this.userArr);
+  fnSearch() {
+    // console.log(this.searchStr)
+    this.btnClick.emit(this.searchStr);
+    // this.filterName = event.target.value;
+    // this.userArr = this.userArr.filter((item: any) => {
+    //   return item.Name.includes(this.searchStr);
+    // });
+  }
+
+  onClick() {
+    this.btnClick.emit(this.searchStr);
   }
 }

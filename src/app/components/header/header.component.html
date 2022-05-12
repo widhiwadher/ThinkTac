@@ -10,6 +10,7 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      
     >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,10 +22,10 @@
           type="text"
           name="searchStr"
           placeholder="Search"
-          (input)="fnSearch($event)"
+          (input)="fnSearch()"
           [(ngModel)]="searchStr"
         />
-        <button class="btn searchbtn shadow-sm" type="submit">
+        <button class="btn searchbtn shadow-sm" type="submit" (click)="onClick()">
           Search
         </button>
       </form>
@@ -69,4 +70,4 @@
     </div>
   </div>
 </nav>
-<app-home [dataTest]="userArr"></app-home>
+<!-- <app-home [dataTest]="userArr"></app-home> -->
