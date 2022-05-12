@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../../service/api-service.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,25 +7,25 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  @Input() dataTest: any = '';
-  constructor(private apiService: ApiServiceService) {}
+  constructor(private apiService: ApiServiceService) { }
   filterStr: any = '';
-  message: string = '';
-  subscription!: Subscription;
+  userArr: any = '';
 
-  //  this.subscription = this.data.currentMessage.subscribe(message => this.message = message)
-
-  // searchText = '';
-  // listArr: any = ['bus', 'car', 'bike', 'bmw', 'bullet', 'scotter'];
   ngOnInit(): void {
-    // this.apiService.callingService().subscribe((res) => {
-    //   this.userArr = res;
-    //   console.log(this.userArr);
-    // });
+    this.apiService.callingService().subscribe((res) => {
+      this.userArr = res;
+      console.log(this.userArr);
+    });
   }
-
-  // fnSearch() {
-  //   const filterData = this.listArr.filter((str: any) => {
-  //     return str.includes('bi');
+  fnFilterData(event: any) {
+    this.userArr = this.apiService.filterData(event)
+  }
+  // fnSearch(event: any) {
+  //   console.log(this.searchStr)
+  //   this.filterName = event.target.value;
+  //   this.userArr = this.userArr.filter((item: any) => {
+  //     return item.Name.includes(this.searchStr);
   //   });
+  //   console.log(this.userArr);
+  // }
 }

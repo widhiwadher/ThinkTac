@@ -1,13 +1,7 @@
-<!-- <app-header [dataTest]="userArr"></app-header> -->
-
-<!-- <div *ngFor="let user of userArr">
-  <h2>{{ user.Name }}</h2>
-  <h4>{{ user.Version }}</h4>
-  <img src="{{ user.IconUrl }}" alt="" />
-</div> -->
+<app-header (btnClick)="fnFilterData($event)"></app-header>
 <section class="chart-section">
   <div
-    *ngFor="let user of dataTest"
+    *ngFor="let user of userArr"
     class="card-body shadow rounded mt-5 mb-2 bg-blue"
   >
     <div class="row">
@@ -28,6 +22,4 @@
     </div>
   </div>
 </section>
-<!-- <div *ngFor="let item of listArr">
-  <p>{{ item }}</p>
-</div> -->
+
