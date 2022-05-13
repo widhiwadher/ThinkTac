@@ -1,25 +1,26 @@
 <app-header (btnClick)="fnFilterData($event)"></app-header>
-<section class="chart-section">
-  <div
-    *ngFor="let user of userArr"
-    class="card-body shadow rounded mt-5 mb-2 bg-blue"
-  >
-    <div class="row">
-      <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-        <img
-          src="{{ user.IconUrl }}"
-          alt="Avatar"
-          class="avatar"
-          width="70px"
-          height="70px"
-        />
-      </div>
-      <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10 text-right">
-        <span>
-          <h5 class="col-9 rowalign">{{ user.Name }}</h5>
-        </span>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div *ngFor="let user of userArr">
+        <div class="mt-3 card">
+          <div class="card-body">
+            <div class="row">
+              <h5 class="card-title w-75 float-left">{{ user.Name }}</h5>
+              <div class="card-text w-25 float-right">
+                <img
+                  src="{{ user.IconUrl }}"
+                  alt="Avatar"
+                  class="avatar pull-right"
+                  width="70px"
+                  height="70px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
-
+</div>
